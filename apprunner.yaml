@@ -1,11 +1,9 @@
 version: 1.0
-runtime: python3
+runtime: java
 build:
   commands:
-    build:
-    - yum install -y pycairo
-    - pip install -r requirements.txt
+    - mvn clean install
 run:
-  command: python app.py
+  command: java -jar target/test-apollo.jar
   network:
-    port: 8000
+    port: 8080
